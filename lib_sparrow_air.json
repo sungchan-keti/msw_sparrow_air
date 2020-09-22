@@ -4,7 +4,9 @@
     "description": "[name] [portnum] [baudrate]",
     "scripts": "./lib_sparrow_air /dev/ttyUSB4 115200",
     "data": [
-        "LTE"
+        "AIR"
     ],
-    "control": []
+    "control": [
+        "Control_AIR"
+    ]
 }
