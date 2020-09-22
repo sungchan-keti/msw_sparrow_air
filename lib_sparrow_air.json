@@ -1,0 +1,10 @@
+{
+    "name": "lib_sparrow_air",
+    "target": "armv6",
+    "description": "[name] [portnum] [baudrate]",
+    "scripts": "./lib_sparrow_air /dev/ttyUSB4 115200",
+    "data": [
+        "LTE"
+    ],
+    "control": []
+}
