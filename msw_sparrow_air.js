@@ -209,7 +209,7 @@ function on_receive_from_muv(topic, str_message) {
 }
 
 function on_receive_from_lib(topic, str_message) {
-    console.log('[' + topic + '] ' + str_message);
+    console.log('[' + topic + '] ' + str_message + '\n');
 
     parseDataMission(topic, str_message);
 }
