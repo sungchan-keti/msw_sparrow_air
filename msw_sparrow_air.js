@@ -203,7 +203,6 @@ function msw_mqtt_connect(broker_ip, port) {
 }
 
 function on_receive_from_muv(topic, str_message) {
-    console.log("receive control: ",  topic, str_message);
     console.log('[' + topic + '] ' + str_message);
 
     parseControlMission(topic, str_message);
@@ -249,14 +248,13 @@ function parseDataMission(topic, str_message) {
 ///////////////////////////////////////////////////////////////////////////////
 
 function parseControlMission(topic, str_message) {
-    console.log("control data\n", topic, str_message);
     try {
         // User define Code
         ///////////////////////////////////////////////////////////////////////
 
         var topic_arr = topic.split('/');
         var _topic = '/MUV/control/' + config.lib[0].name + '/' + topic_arr[topic_arr.length - 1];
-        console.log('control topic: ', _topic);
+        console.log('[msw]control topic: ', _topic);
         msw_mqtt_client.publish(_topic, str_message);
     }
     catch (e) {
