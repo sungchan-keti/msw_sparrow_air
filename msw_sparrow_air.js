@@ -254,9 +254,7 @@ function parseControlMission(topic, str_message) {
 
         var topic_arr = topic.split('/');
         var _topic = '/MUV/control/' + config.lib[0].name + '/' + topic_arr[topic_arr.length - 1];
-        console.log('[msw]control topic: ', _topic);
         msw_mqtt_client.publish(_topic, str_message);
-        console.log('[msw]control str_message: ', str_message);
     }
     catch (e) {
         console.log('[parseDataMission] data format of lib is not json');
