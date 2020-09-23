@@ -168,9 +168,11 @@ function msw_mqtt_connect(broker_ip, port) {
         });
 
         msw_mqtt_client.on('message', function (topic, message) {
+            console.log('msw_mqtt message:\n', topic, message);
             for(var idx in msw_sub_muv_topic) {
                 if (msw_sub_muv_topic.hasOwnProperty(idx)) {
                     if(topic == msw_sub_muv_topic[idx]) {
+                        console.log('msw_sub_muv_topic[idx]: ', msw_sub_muv_topic[idx]);
                         setTimeout(on_receive_from_muv, parseInt(Math.random() * 5), topic, message.toString());
                         break;
                     }
@@ -203,6 +205,7 @@ function msw_mqtt_connect(broker_ip, port) {
 }
 
 function on_receive_from_muv(topic, str_message) {
+    console.log("receive control: ",  topic, str_message);
     console.log('[' + topic + '] ' + str_message);
 
     parseControlMission(topic, str_message);
