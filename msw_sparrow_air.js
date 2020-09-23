@@ -78,6 +78,7 @@ function init() {
                     for (var i = 0; i < config.lib[idx].control.length; i++) {
                         var sub_container_name = config.lib[idx].control[i];
                         _topic = '/Mobius/' + config.gcs + '/Mission_Data/' + config.drone + '/' + sub_container_name;
+                        console.log('sub_container_topic\n', _topic);
                         msw_mqtt_client.subscribe(_topic);
                         msw_sub_muv_topic.push(_topic);
                         console.log('[msw_mqtt] msw_sub_muv_topic[' + i + ']: ' + _topic);
