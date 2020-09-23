@@ -169,7 +169,6 @@ function msw_mqtt_connect(broker_ip, port) {
         });
 
         msw_mqtt_client.on('message', function (topic, message) {
-            console.log('msw_mqtt message:\n', topic, message);
             for(var idx in msw_sub_muv_topic) {
                 if (msw_sub_muv_topic.hasOwnProperty(idx)) {
                     if(topic == msw_sub_muv_topic[idx]) {
