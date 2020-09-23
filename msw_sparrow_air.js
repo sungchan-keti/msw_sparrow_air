@@ -248,6 +248,7 @@ function parseDataMission(topic, str_message) {
 ///////////////////////////////////////////////////////////////////////////////
 
 function parseControlMission(topic, str_message) {
+    console.log("control data\n", topic, str_message);
     try {
         // User define Code
         ///////////////////////////////////////////////////////////////////////
