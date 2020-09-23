@@ -240,6 +240,7 @@ function parseDataMission(topic, str_message) {
         var data_topic = '/Mobius/' + config.gcs + '/Mission_Data/' + config.drone + '/' + config.name + '/' + topic_arr[topic_arr.length-1];
         // msw_mqtt_client.publish(data_topic + config.sortie_name, str_message);
         msw_mqtt_client.publish(data_topic, str_message);
+        console.log("publish:\t", data_topic, str_message);
     }
     catch (e) {
         console.log('[parseDataMission] data format of lib is not json');
