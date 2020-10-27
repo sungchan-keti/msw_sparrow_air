@@ -146,6 +146,7 @@ def missionPortData(missionPort):
     global airQ
     flag = 0
     airReqMessage(missionPort)
+    count = 0
     while True:
         missionStr = missionPort.readlines()
         print('missionStr\n', missionStr)
@@ -153,7 +154,13 @@ def missionPortData(missionPort):
             # if ((not missionStr) or (missionStr[0] == b'\x00\n') or (len(missionStr) < 3)):
             if ((not missionStr) or (missionStr[0] == b'\x00\n')):
                 if (not missionStr):
-                    pass
+                    if (count == 10):
+                        pass
+                        count += 1
+                    else:
+                        airReqMessage(missionPort)
+                        flag = 0
+
                 else:
                     airReqMessage(missionPort)
                     flag = 0
