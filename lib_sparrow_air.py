@@ -163,9 +163,9 @@ def missionPortData(missionPort):
                 if (flag == 0):
                     flag = 1
                     arrAIRQ = missionStr[3].decode("utf-8").split(", ")
-                    print('arrAIRQ: ', arrAIRQ)
+                    print('arrAIRQ1: ', arrAIRQ)
                     arrQValue = arrAIRQ[0].split(',')
-                    print('arrQValue: ', arrQValue)
+                    print('arrQValue1: ', arrQValue)
                     airQ['PM2.5'] = float(arrQValue[0]) # (ug/m3)
                     airQ['PM10'] = float(arrQValue[1]) # (ug/m3)
                     airQ['CO'] = float(arrQValue[2]) # (ppb)
@@ -191,9 +191,9 @@ def missionPortData(missionPort):
                 else:
                     if (len(missionStr) > 1):
                         arrAIRQ = missionStr[0].decode("utf-8").split(", ")
-                        print('arrAIRQ: ', arrAIRQ)
+                        print('arrAIRQ2: ', arrAIRQ)
                         arrQValue = arrAIRQ[0].split(',')
-                        print('arrQValue: ', arrQValue)
+                        print('arrQValue2: ', arrQValue)
                         airQ['PM2.5'] = float(arrQValue[0]) # (ug/m3)
                         airQ['PM10'] = float(arrQValue[1]) # (ug/m3)
                         airQ['CO'] = float(arrQValue[2]) # (ppb)
@@ -219,9 +219,9 @@ def missionPortData(missionPort):
                         
                         airQ = dict()
                         arrAIRQ = missionStr[1].decode("utf-8").split(", ")
-                        print('arrAIRQ: ', arrAIRQ)
+                        print('arrAIRQ3: ', arrAIRQ)
                         arrQValue = arrAIRQ[0].split(',')
-                        print('arrQValue: ', arrQValue)
+                        print('arrQValue3: ', arrQValue)
                         airQ['PM2.5'] = float(arrQValue[0]) # (ug/m3)
                         airQ['PM10'] = float(arrQValue[1]) # (ug/m3)
                         airQ['CO'] = float(arrQValue[2]) # (ppb)
@@ -246,9 +246,9 @@ def missionPortData(missionPort):
                         send_data_to_msw(data_topic, airQ)
                     else:
                         arrAIRQ = missionStr[0].decode("utf-8").split(", ")
-                        print('arrAIRQ: ', arrAIRQ)
+                        print('arrAIRQ4: ', arrAIRQ)
                         arrQValue = arrAIRQ[0].split(',')
-                        print('arrQValue: ', arrQValue)
+                        print('arrQValue4: ', arrQValue)
                         airQ['PM2.5'] = float(arrQValue[0]) # (ug/m3)
                         airQ['PM10'] = float(arrQValue[1]) # (ug/m3)
                         airQ['CO'] = float(arrQValue[2]) # (ppb)
