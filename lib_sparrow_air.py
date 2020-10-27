@@ -30,7 +30,6 @@ airQ['CO_OP1'] = 0 # (mV)
 airQ['CO_OP2'] = 0 # (mV)
 airQ['SO2_OP1'] = 0 # (mV)
 airQ['SO2_OP2'] = 0 # (mV)
-flag = 0
 
 
 def on_connect(client,userdata,flags, rc):
@@ -145,19 +144,12 @@ def send_data_to_msw (data_topic, obj_data):
 
 def missionPortData(missionPort):
     global airQ
-    # airQ = dict()
+    flag = 0
     airReqMessage(missionPort)
     while True:
         missionStr = missionPort.readlines()
         print('missionStr\n', missionStr)
-        # try:
-        #     if (flag == 0):
-        #         data = missionStr[3].split(',')
-        #         print('data:', data)
-        #         flag = 1
-        # except ValueError:
-        #     airReqMessage(missionPort)
-
+        print(flag)
         try:
             if ((not missionStr) or (missionStr[0] == b'\x00\n') or (len(missionStr) < 3)):
                 airReqMessage(missionPort)
@@ -279,6 +271,7 @@ def missionPortData(missionPort):
         except ValueError:
             airReqMessage(missionPort)
             pass
+
 
         # airQ = dict()
         # time.sleep(10)
