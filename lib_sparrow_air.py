@@ -250,7 +250,7 @@ def missionPortData(missionPort):
                         print('arrQValue4: ', arrQValue)
                         for i in range(len(arrAIRQ)):
                             arrAIRQ[i] = int(arrAIRQ[i])
-                        for i in range(len(arrQValue):
+                        for i in range(len(arrQValue)):
                             arrQValue[i] = float(arrQValue[i])
                         '''
                         airQ['PM2.5'] = float(arrQValue[0]) # (ug/m3)
