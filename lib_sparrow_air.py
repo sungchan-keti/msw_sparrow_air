@@ -279,9 +279,6 @@ def missionPortData(missionPort):
         except ValueError:
             airReqMessage(missionPort)
             pass
-        except TypeError as e:
-            print(e)
-            print('TypeError:', airQ)
 
         # airQ = dict()
         # time.sleep(10)
