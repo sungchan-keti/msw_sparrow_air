@@ -163,7 +163,9 @@ def missionPortData(missionPort):
                 if (flag == 0):
                     flag = 1
                     arrAIRQ = missionStr[3].decode("utf-8").split(", ")
+                    print('arrAIRQ: ', arrAIRQ)
                     arrQValue = arrAIRQ[0].split(',')
+                    print('arrQValue: ', arrQValue)
                     airQ['PM2.5'] = float(arrQValue[0]) # (ug/m3)
                     airQ['PM10'] = float(arrQValue[1]) # (ug/m3)
                     airQ['CO'] = float(arrQValue[2]) # (ppb)
@@ -189,7 +191,9 @@ def missionPortData(missionPort):
                 else:
                     if (len(missionStr) > 1):
                         arrAIRQ = missionStr[0].decode("utf-8").split(", ")
+                        print('arrAIRQ: ', arrAIRQ)
                         arrQValue = arrAIRQ[0].split(',')
+                        print('arrQValue: ', arrQValue)
                         airQ['PM2.5'] = float(arrQValue[0]) # (ug/m3)
                         airQ['PM10'] = float(arrQValue[1]) # (ug/m3)
                         airQ['CO'] = float(arrQValue[2]) # (ppb)
@@ -215,7 +219,9 @@ def missionPortData(missionPort):
                         
                         airQ = dict()
                         arrAIRQ = missionStr[1].decode("utf-8").split(", ")
+                        print('arrAIRQ: ', arrAIRQ)
                         arrQValue = arrAIRQ[0].split(',')
+                        print('arrQValue: ', arrQValue)
                         airQ['PM2.5'] = float(arrQValue[0]) # (ug/m3)
                         airQ['PM10'] = float(arrQValue[1]) # (ug/m3)
                         airQ['CO'] = float(arrQValue[2]) # (ppb)
@@ -240,7 +246,9 @@ def missionPortData(missionPort):
                         send_data_to_msw(data_topic, airQ)
                     else:
                         arrAIRQ = missionStr[0].decode("utf-8").split(", ")
+                        print('arrAIRQ: ', arrAIRQ)
                         arrQValue = arrAIRQ[0].split(',')
+                        print('arrQValue: ', arrQValue)
                         airQ['PM2.5'] = float(arrQValue[0]) # (ug/m3)
                         airQ['PM10'] = float(arrQValue[1]) # (ug/m3)
                         airQ['CO'] = float(arrQValue[2]) # (ppb)
