@@ -30,6 +30,8 @@ airQ['CO_OP1'] = 0 # (mV)
 airQ['CO_OP2'] = 0 # (mV)
 airQ['SO2_OP1'] = 0 # (mV)
 airQ['SO2_OP2'] = 0 # (mV)
+flag = 0
+
 
 def on_connect(client,userdata,flags, rc):
     print('[msw_mqtt_connect] connect to ', broker_ip)
