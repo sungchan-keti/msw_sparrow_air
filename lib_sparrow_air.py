@@ -148,6 +148,12 @@ def missionPortData(missionPort):
         missionStr = missionPort.readlines()
         print('missionStr\n', missionStr)
         try:
+            data = missionStr.split(', ')
+            print('data:', data)
+        except ValueError:
+            airReqMessage(missionPort)
+        '''
+        try:
             if ((not missionStr) or (missionStr[0] == b'\x00\n') or (len(missionStr) < 3)):
                 # airReqMessage(missionPort)
                 flag = 0
@@ -259,6 +265,7 @@ def missionPortData(missionPort):
         except ValueError:
             airReqMessage(missionPort)
             pass
+        '''
         # airQ = dict()
         # time.sleep(10)
 
