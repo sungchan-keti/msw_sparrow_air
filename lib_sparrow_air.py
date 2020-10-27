@@ -148,8 +148,10 @@ def missionPortData(missionPort):
         missionStr = missionPort.readlines()
         print('missionStr\n', missionStr)
         try:
-            data = missionStr.split(', ')
-            print('data:', data)
+            if (flag == 0):
+                data = missionStr[3].split(',')
+                print('data:', data)
+                flag = 1
         except ValueError:
             airReqMessage(missionPort)
         '''
