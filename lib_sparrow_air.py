@@ -132,6 +132,8 @@ def airReqMessage(missionPort):
         if missionPort.is_open:
             setcmd = b'I'
             missionPort.write(setcmd)
+            flag = 0
+
 
 def send_data_to_msw (data_topic, obj_data):
     global lib_mqtt_client
@@ -143,7 +145,6 @@ def missionPortData(missionPort):
     global airQ
     # airQ = dict()
     airReqMessage(missionPort)
-    flag = 0
     while True:
         missionStr = missionPort.readlines()
         print('missionStr\n', missionStr)
