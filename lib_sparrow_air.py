@@ -154,15 +154,15 @@ def missionPortData(missionPort):
             # if ((not missionStr) or (missionStr[0] == b'\x00\n') or (len(missionStr) < 3)):
             if ((not missionStr) or (missionStr[0] == b'\x00\n')):
                 if (not missionStr):
-                    if (count == 10):
+                    if (count < 10):
                         pass
                         count += 1
                     else:
-                        airReqMessage(missionPort)
+                        # airReqMessage(missionPort)
                         flag = 0
 
                 else:
-                    airReqMessage(missionPort)
+                    # airReqMessage(missionPort)
                     flag = 0
 
             else:
