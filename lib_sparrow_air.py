@@ -153,7 +153,7 @@ def missionPortData(missionPort):
         try:
             if ((not missionStr) or (missionStr[0] == b'\x00\n') or (len(missionStr) < 3)):
                 airReqMessage(missionPort)
-                flag = 0
+
             else:
                 if (flag == 0):
                     flag = 1
