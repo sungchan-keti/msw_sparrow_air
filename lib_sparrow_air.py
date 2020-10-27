@@ -149,7 +149,6 @@ def missionPortData(missionPort):
     while True:
         missionStr = missionPort.readlines()
         print('missionStr\n', missionStr)
-        print(flag)
         try:
             # if ((not missionStr) or (missionStr[0] == b'\x00\n') or (len(missionStr) < 3)):
             if ((not missionStr) or (missionStr[0] == b'\x00\n')):
@@ -247,9 +246,9 @@ def missionPortData(missionPort):
                     else:
                         arrAIRQ = missionStr[0].decode("utf-8").split(", ")
                         print('arrAIRQ4: ', arrAIRQ)
-                        arrQValue = arrAIRQ[0].split(',')
+                        arrQValue = float(arrAIRQ[0].split(','))
                         print('arrQValue4: ', arrQValue)
-                        # airQ['PM2.5'] = float(arrQValue[0]) # (ug/m3)
+                        airQ['PM2.5'] = float(arrQValue[0]) # (ug/m3)
                         airQ['PM10'] = float(arrQValue[1]) # (ug/m3)
                         airQ['CO'] = float(arrQValue[2]) # (ppb)
                         airQ['NO2'] = float(arrQValue[3]) # (ppb)
