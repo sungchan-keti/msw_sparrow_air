@@ -248,7 +248,7 @@ def missionPortData(missionPort):
                         print('arrAIRQ4: ', arrAIRQ)
                         arrQValue = arrAIRQ[0].split(',')
                         print('arrQValue4: ', arrQValue)
-                        for i in range(len(arrAIRQ):
+                        for i in range(len(arrAIRQ)):
                             arrAIRQ[i] = int(arrAIRQ[i])
                         for i in range(len(arrQValue):
                             arrQValue[i] = float(arrQValue[i])
