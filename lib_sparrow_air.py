@@ -12,7 +12,7 @@ global airQ
 
 missionPort = None
 airQ = dict()
-airQ['PM2.5'] = 0.0 # (ug/m3)
+airQ['PM25'] = 0.0 # (ug/m3)
 airQ['PM10'] = 0.0 # (ug/m3)
 airQ['CO'] = 0.0 # (ppb)
 airQ['NO2'] = 0.0 # (ppb)
@@ -172,7 +172,7 @@ def missionPortData(missionPort):
                     print('arrAIRQ1: ', arrAIRQ)
                     arrQValue = arrAIRQ[0].split(',')
                     print('arrQValue1: ', arrQValue)
-                    airQ['PM2.5'] = float(arrQValue[0]) # (ug/m3)
+                    airQ['PM25'] = float(arrQValue[0]) # (ug/m3)
                     airQ['PM10'] = float(arrQValue[1]) # (ug/m3)
                     airQ['CO'] = float(arrQValue[2]) # (ppb)
                     airQ['NO2'] = float(arrQValue[3]) # (ppb)
@@ -200,8 +200,8 @@ def missionPortData(missionPort):
                     print('arrAIRQ2: ', arrAIRQ)
                     arrQValue = arrAIRQ[0].split(",")
                     print('arrQValue2: ', arrQValue)
-                    print(airQ['PM2.5'])
-                    airQ['PM2.5'] = float(arrQValue[0]) # (ug/m3)
+                    print(airQ['PM25'])
+                    airQ['PM25'] = float(arrQValue[0]) # (ug/m3)
                     airQ['PM10'] = float(arrQValue[1]) # (ug/m3)
                     airQ['CO'] = float(arrQValue[2]) # (ppb)
                     airQ['NO2'] = float(arrQValue[3]) # (ppb)
