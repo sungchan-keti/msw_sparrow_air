@@ -200,7 +200,7 @@ def missionPortData(missionPort):
                     print('arrAIRQ2: ', arrAIRQ)
                     arrQValue = arrAIRQ[0].split(",")
                     print('arrQValue2: ', arrQValue)
-                    print(airQ['PM25'])
+                    print(airQ)
                     airQ['PM25'] = float(arrQValue[0]) # (ug/m3)
                     airQ['PM10'] = float(arrQValue[1]) # (ug/m3)
                     airQ['CO'] = float(arrQValue[2]) # (ppb)
