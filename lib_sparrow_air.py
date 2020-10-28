@@ -158,6 +158,7 @@ def missionPortData(missionPort):
                         count += 1
                         pass
                     else:
+                        count = 0
                         airReqMessage(missionPort)
                         flag = 0
 
@@ -169,9 +170,7 @@ def missionPortData(missionPort):
                 if (flag == 0):
                     flag = 1
                     arrAIRQ = missionStr[3].decode("utf-8").split(", ")
-                    print('arrAIRQ1: ', arrAIRQ)
                     arrQValue = arrAIRQ[0].split(',')
-                    print('arrQValue1: ', arrQValue)
                     airQ['PM25'] = float(arrQValue[0]) # (ug/m3)
                     airQ['PM10'] = float(arrQValue[1]) # (ug/m3)
                     airQ['CO'] = float(arrQValue[2]) # (ppb)
@@ -196,12 +195,8 @@ def missionPortData(missionPort):
                     send_data_to_msw(data_topic, airQ)
                     airQ = json.loads(airQ)
                 else:
-
                     arrAIRQ = missionStr[0].decode("utf-8").split(", ")
-                    print('arrAIRQ2: ', arrAIRQ)
                     arrQValue = arrAIRQ[0].split(",")
-                    print('arrQValue2: ', arrQValue)
-                    print(type(airQ))
                     airQ['PM25'] = float(arrQValue[0]) # (ug/m3)
                     airQ['PM10'] = float(arrQValue[1]) # (ug/m3)
                     airQ['CO'] = float(arrQValue[2]) # (ppb)
@@ -229,10 +224,6 @@ def missionPortData(missionPort):
         except ValueError:
             airReqMessage(missionPort)
             pass
-
-
-        # airQ = dict()
-        # time.sleep(10)
 
 
 if __name__ == '__main__':
