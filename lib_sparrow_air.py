@@ -194,6 +194,7 @@ def missionPortData(missionPort):
                     data_topic = '/MUV/data/' + lib["name"] + '/' + container_name
                     airQ = json.dumps(airQ)
                     send_data_to_msw(data_topic, airQ)
+                    airQ = json.loads(airQ)
                 else:
 
                     arrAIRQ = missionStr[0].decode("utf-8").split(", ")
@@ -201,9 +202,8 @@ def missionPortData(missionPort):
                     arrQValue = arrAIRQ[0].split(",")
                     print('arrQValue2: ', arrQValue)
                     print(type(airQ))
-                    airQ.update({'PM25':float(arrQValue[0]), 'PM10':float(arrQValue[1])})
-                    # airQ['PM25'] = float(arrQValue[0]) # (ug/m3)
-                    # airQ['PM10'] = float(arrQValue[1]) # (ug/m3)
+                    airQ['PM25'] = float(arrQValue[0]) # (ug/m3)
+                    airQ['PM10'] = float(arrQValue[1]) # (ug/m3)
                     airQ['CO'] = float(arrQValue[2]) # (ppb)
                     airQ['NO2'] = float(arrQValue[3]) # (ppb)
                     airQ['O3_org'] = float(arrQValue[4]) # (org/ppb)
@@ -224,7 +224,8 @@ def missionPortData(missionPort):
                     data_topic = '/MUV/data/' + lib["name"] + '/' + container_name
                     airQ = json.dumps(airQ)
                     send_data_to_msw(data_topic, airQ)
-                        
+                    airQ = json.loads(airQ)
+
         except ValueError:
             airReqMessage(missionPort)
             pass
