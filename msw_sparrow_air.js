@@ -252,7 +252,7 @@ function parseControlMission(topic, str_message) {
     try {
         // User define Code
         ///////////////////////////////////////////////////////////////////////
-
+        console.log('recevied data is ' + str_message);  
         var topic_arr = topic.split('/');
         var _topic = '/MUV/control/' + config.lib[0].name + '/' + topic_arr[topic_arr.length - 1];
         msw_mqtt_client.publish(_topic, str_message);
